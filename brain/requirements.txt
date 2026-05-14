@@ -10,7 +10,7 @@ persim
 langchain-ollama
 langchain-anthropic
 langgraph
-langgraph[sqlite]
+langgraph
 mcp
 anthropic
 python-frontmatter
@@ -20,4 +20,3 @@ aiohttp
 watchdog
 schedule
 psutil
-causalnex

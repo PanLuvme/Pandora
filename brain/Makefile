@@ -48,7 +48,7 @@ _check:
 	@echo "All dependencies found"
 
 _venv:
-	@python3 -m venv $(BASE)/venv
+	@python3.11 -m venv $(BASE)/venv
 	@echo "Virtual environment ready"
 
 _packages:
@@ -57,7 +57,7 @@ _packages:
 	@echo "Python packages installed"
 
 _node:
-	@npm install -g pm2 obsidian-hybrid-search --silent
+	@npm install -g pm2 && npm install -g obsidian-hybrid-search
 	@echo "Node packages installed"
 
 _ollama:

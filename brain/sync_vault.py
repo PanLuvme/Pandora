@@ -1,18 +1,17 @@
 import os
 import sys
-import re
-import frontmatter
 sys.path.insert(0, os.path.expanduser("~/Pandora/brain"))
 
-from config import VAULT_PATH, ATOMIC_PATH
+import frontmatter
+from neo4j import GraphDatabase
+from config import (
+    ATOMIC_PATH, NEO4J_URI, NEO4J_USER, NEO4J_PASS
+)
 from utils import log_metrics, wait_for_file_ready
 
-def extract_frontmatter(content: str) -> dict:
-    try:
-        post = frontmatter.loads(content)
-        return dict(post.metadata)
-    except Exception:
-        return {}
+driver = GraphDatabase.driver(
+    NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASS)
+)
 
 def sync_file(filepath: str):
     if not wait_for_file_ready(filepath):
@@ -21,29 +20,50 @@ def sync_file(filepath: str):
     try:
         with open(filepath, encoding="utf-8") as f:
             content = f.read()
-        fm = extract_frontmatter(content)
-        if not fm.get("id"):
+        post = frontmatter.loads(content)
+        fm = dict(post.metadata)
+        node_id = str(fm.get("id", ""))
+        if not node_id:
             return
-        node_id = str(fm["id"])
         props = {
             "aliases":         str(fm.get("aliases", "")),
-            "strength":        fm.get("strength", "reference"),
             "confidence":      fm.get("confidence", "low"),
             "weight":          float(fm.get("weight", 1.0)),
             "activation_count":int(fm.get("activation_count", 0)),
             "status":          fm.get("status", "active"),
             "tags":            str(fm.get("tags", [])),
             "captured":        str(fm.get("captured", "")),
+            "memory_tier":     fm.get("memory_tier", "warm"),
             "pheromone":       float(fm.get("pheromone", 0.0)),
             "temporal_weight": float(fm.get("temporal_weight", 1.0)),
-            "surprise_score":  float(fm.get("surprise_score", 0.0)),
-            "memory_tier":     fm.get("memory_tier", "warm"),
         }
         edges = fm.get("edges", {}) or {}
+        with driver.session() as session:
+            session.run(
+                "MERGE (n:Note {id: $id}) SET n += $props",
+                id=node_id, props=props
+            )
+            for edge_type, targets in edges.items():
+                if not targets:
+                    continue
+                if isinstance(targets, str):
+                    targets = [targets]
+                for target in targets:
+                    if not target:
+                        continue
+                    tid = str(target).replace(
+                        "[[","").replace("]]","").strip()
+                    if tid:
+                        et = edge_type.upper().replace("-","_")
+                        session.run(f"""
+                            MATCH (a:Note {{id: $fid}})
+                            MERGE (b:Note {{id: $tid}})
+                            MERGE (a)-[:{et}]->(b)
+                        """, fid=node_id, tid=tid)
         log_metrics(f"node_synced | id:{node_id}")
         print(f"Synced: {node_id}")
     except Exception as e:
-        print(f"Sync error for {filepath}: {e}")
+        print(f"Error syncing {filepath}: {e}")
 
 def sync_all():
     if not os.path.exists(ATOMIC_PATH):

@@ -1,11 +1,9 @@
-import asyncio
-import json
 import sys
 import os
+import json
 sys.path.insert(0, os.path.expanduser("~/Pandora/brain"))
 
 from registry import RegistryReader
-from config import MCP_PORT
 
 registry = RegistryReader()
 modules = {}
@@ -43,13 +41,9 @@ def load_enabled_modules():
                 modules[module_id] = cls()
                 print(f"Loaded: {module_id}", file=sys.stderr)
             except Exception as e:
-                print(
-                    f"Failed to load {module_id}: {e}",
-                    file=sys.stderr
-                )
+                print(f"Failed to load {module_id}: {e}", file=sys.stderr)
 
 load_enabled_modules()
-
 
 def brain_tool(params: dict) -> dict:
     action = params.get("action")
@@ -58,8 +52,7 @@ def brain_tool(params: dict) -> dict:
     elif action == "reload":
         registry.reload()
         load_enabled_modules()
-        return {"status": "reloaded",
-                "enabled": registry.list_enabled()}
+        return {"status": "reloaded", "enabled": registry.list_enabled()}
     elif action == "load":
         return registry.get_schema(params.get("module", ""))
     elif action == "run":
@@ -74,53 +67,87 @@ def brain_tool(params: dict) -> dict:
         return getattr(module, tool_name)(tool_params)
     return {"error": "action must be list, load, reload, or run"}
 
-
 TOOL_MAP = {
-    "brain_tool": lambda p: brain_tool(p),
+    "brain_tool": brain_tool,
 }
 
+# MCP stdio protocol
+def handle_message(msg: dict) -> dict:
+    method = msg.get("method", "")
+    msg_id = msg.get("id")
 
-async def handle_request(reader, writer):
-    try:
-        data = await reader.readline()
-        if not data:
-            writer.close()
-            return
-        request = json.loads(data.decode().strip())
-        tool = request.get("tool")
-        params = request.get("params", {})
-        if tool in TOOL_MAP:
-            result = TOOL_MAP[tool](params)
-        else:
-            result = {
-                "error": f"Unknown tool: {tool}",
-                "available": list(TOOL_MAP.keys())
+    if method == "initialize":
+        return {
+            "jsonrpc": "2.0",
+            "id": msg_id,
+            "result": {
+                "protocolVersion": "2025-11-25",
+                "capabilities": {"tools": {}},
+                "serverInfo": {
+                    "name": "pandora-brain",
+                    "version": "1.0.0"
+                }
             }
-    except Exception as e:
-        result = {"error": str(e)}
-    writer.write((json.dumps(result) + "\n").encode())
-    await writer.drain()
-    writer.close()
+        }
+    elif method == "tools/list":
+        return {
+            "jsonrpc": "2.0",
+            "id": msg_id,
+            "result": {
+                "tools": [
+                    {
+                        "name": "brain_tool",
+                        "description": "Interface to Pandora brain modules",
+                        "inputSchema": {
+                            "type": "object",
+                            "properties": {
+                                "action": {"type": "string"},
+                                "module": {"type": "string"},
+                                "tool": {"type": "string"},
+                                "params": {"type": "object"}
+                            },
+                            "required": ["action"]
+                        }
+                    }
+                ]
+            }
+        }
+    elif method == "tools/call":
+        tool_name = msg.get("params", {}).get("name")
+        tool_args = msg.get("params", {}).get("arguments", {})
+        if tool_name in TOOL_MAP:
+            result = TOOL_MAP[tool_name](tool_args)
+        else:
+            result = {"error": f"Unknown tool: {tool_name}"}
+        return {
+            "jsonrpc": "2.0",
+            "id": msg_id,
+            "result": {
+                "content": [{"type": "text", "text": json.dumps(result)}]
+            }
+        }
+    elif method == "notifications/initialized":
+        return None
+    else:
+        return {
+            "jsonrpc": "2.0",
+            "id": msg_id,
+            "error": {"code": -32601, "message": f"Method not found: {method}"}
+        }
 
-
-async def main():
-    server = await asyncio.start_server(
-        handle_request, "127.0.0.1", MCP_PORT
-    )
-    handshake = {
-        "name": "pandora-brain",
-        "version": "1.0.0",
-        "tools": list(TOOL_MAP.keys()),
-    }
-    print(json.dumps(handshake))
-    sys.stdout.flush()
-    print(
-        f"Pandora MCP server running on port {MCP_PORT}",
-        file=sys.stderr
-    )
-    async with server:
-        await server.serve_forever()
-
+def main():
+    print("Pandora brain MCP server starting", file=sys.stderr)
+    for line in sys.stdin:
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            msg = json.loads(line)
+            response = handle_message(msg)
+            if response is not None:
+                print(json.dumps(response), flush=True)
+        except Exception as e:
+            print(f"Error: {e}", file=sys.stderr)
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()

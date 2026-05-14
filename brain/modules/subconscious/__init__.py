@@ -1,5 +1,7 @@
-# Module: subconscious
-# Status: placeholder — implementation coming
-class Subconscious:
-    def __getattr__(self, name):
-        return lambda p: {"status": "not yet implemented", "module": "subconscious"}
+class PandoraSubconscious:
+    def run_burst(self, p={}):
+        return {"status": "not yet implemented"}
+    def run_burst_adaptive(self, p={}):
+        return {"status": "not yet implemented"}
+    def run_single_loop(self, p={}):
+        return {"status": "not yet implemented"}
