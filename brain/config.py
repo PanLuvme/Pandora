@@ -21,7 +21,7 @@ NEO4J_PASS = "pandora2024"
 
 # Ollama
 OLLAMA_URL           = "http://localhost:11434"
-OLLAMA_MODEL         = "llama3"
+OLLAMA_MODEL         = "llama3.1:8b"
 EMBEDDING_MODEL      = "mxbai-embed-large"
 EMBEDDING_DIMENSIONS = 512
 
