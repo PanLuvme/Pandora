@@ -125,3 +125,30 @@ Format: [timestamp] | [event_type] | [details]
 2026-05-14T04:26:30 | node_synced | id:20260513212200
 2026-05-14T04:27:24 | surprise_weighting | score:1.00 weight:2.0
 2026-05-14T04:27:50 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
+2026-05-14T04:30:30 | node_synced | id:20260514000004
+2026-05-14T04:30:30 | node_synced | id:20260514000001
+2026-05-14T04:30:31 | node_synced | id:20260514000002
+2026-05-14T04:30:31 | node_synced | id:20260514000003
+2026-05-14T04:30:31 | node_synced | id:20260513212200
+2026-05-14T04:32:50 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
+2026-05-14T04:37:50 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
+2026-05-14T04:42:50 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
+2026-05-14T04:46:11 | surprise_weighting | score:1.0 new_domain
+2026-05-14T04:46:17 | semantic_dedup | score:0.000 match:none
+2026-05-14T04:47:46 | node_synced | id:20260514143000
+2026-05-14T04:47:50 | scheduled_job | module:tiered-memory tool:run_tier_promotion_demotion status:error error:[Errno 61] Connection refused
+2026-05-14T04:47:50 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
+2026-05-14T04:49:42 | node_synced | id:20260514000004
+2026-05-14T04:49:42 | node_synced | id:20260514000001
+2026-05-14T04:49:42 | node_synced | id:20260514000002
+2026-05-14T04:49:42 | node_synced | id:20260514000003
+2026-05-14T04:49:42 | node_synced | id:20260513212200
+2026-05-14T04:52:50 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
+2026-05-14T04:57:50 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
+2026-05-14T04:58:21 | node_synced | id:20260514999999
+2026-05-14T04:59:00 | node_synced | id:20260514000004
+2026-05-14T04:59:00 | node_synced | id:20260514000001
+2026-05-14T04:59:00 | node_synced | id:20260514000002
+2026-05-14T04:59:00 | node_synced | id:20260514000003
+2026-05-14T04:59:00 | node_synced | id:20260513212200
+2026-05-14T04:59:00 | node_synced | id:20260514999999
