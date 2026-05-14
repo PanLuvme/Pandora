@@ -151,7 +151,7 @@
       }
     },
     "mdl-pruning": {
-      "enabled": false,
+      "enabled": true,
       "layer": 3,
       "name": "MDL Pruning",
       "description": "Minimum description length redundancy detection",
@@ -219,7 +219,7 @@
       }
     },
     "schema-abstraction": {
-      "enabled": false,
+      "enabled": true,
       "layer": 4,
       "name": "Schema Abstraction",
       "description": "Rumelhart schema detection and inheritance",
@@ -234,7 +234,7 @@
       }
     },
     "causal-discovery": {
-      "enabled": false,
+      "enabled": true,
       "layer": 3,
       "name": "Causal Discovery",
       "description": "NOTEARS algorithm for causal inference",

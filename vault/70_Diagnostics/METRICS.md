@@ -119,3 +119,9 @@ Format: [timestamp] | [event_type] | [details]
 2026-05-14T04:22:45 | node_synced | id:20260514000003
 2026-05-14T04:22:45 | node_synced | id:20260513212200
 2026-05-14T04:22:50 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
+2026-05-14T04:26:30 | node_synced | id:20260514000001
+2026-05-14T04:26:30 | node_synced | id:20260514000002
+2026-05-14T04:26:30 | node_synced | id:20260514000003
+2026-05-14T04:26:30 | node_synced | id:20260513212200
+2026-05-14T04:27:24 | surprise_weighting | score:1.00 weight:2.0
+2026-05-14T04:27:50 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
