@@ -11,10 +11,14 @@
             "id": "fdf4f50b34c05526",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "60_SelfImprovement/SELF_STATE.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "SELF_STATE"
             }
           }
         ]
@@ -192,9 +196,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "83af88a6958bb2f8",
+  "active": "fdf4f50b34c05526",
   "lastOpenFiles": [
+    "10_Atomic/20260514000001.md",
     "10_Atomic/pandora-overview.md",
+    "70_Diagnostics/modules/tiered-memory-health.json",
+    "70_Diagnostics/modules/subconscious-health.json",
+    "70_Diagnostics/modules/self-state-health.json",
+    "60_SelfImprovement/SELF_STATE.md",
     "mycelium-architecture.md"
   ]
 }

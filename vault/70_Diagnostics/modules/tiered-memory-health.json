@@ -1,0 +1,10 @@
+{
+  "status": "healthy",
+  "error_count": 0,
+  "metrics": {
+    "promoted": 0,
+    "demoted": 0,
+    "tier_hot": 1
+  },
+  "last_run": "2026-05-13T23:05:03.070184"
+}

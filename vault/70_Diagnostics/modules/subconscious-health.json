@@ -1,0 +1,10 @@
+{
+  "status": "healthy",
+  "error_count": 0,
+  "metrics": {
+    "total_loops": 100,
+    "insights": 0,
+    "last_burst": 100
+  },
+  "last_run": "2026-05-13T23:04:36.405196"
+}

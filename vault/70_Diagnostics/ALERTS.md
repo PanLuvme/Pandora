@@ -12,3 +12,6 @@ None yet.
 
 ## Resolved
 None yet.
+
+## Orphaned nodes (1)
+- [ ] 20260513212200 — ['Pandora', 'Pandora Brain']

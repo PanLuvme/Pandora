@@ -58,7 +58,7 @@ class SelfStateGenerator:
                     domain_r = session.run("""
                         MATCH (n:Note)
                         UNWIND n.tags as tag
-                        WHERE tag STARTS WITH 'Domain/'
+                        AND tag STARTS WITH 'Domain/'
                         RETURN tag as domain, count(*) as count
                         ORDER BY count DESC LIMIT 10
                     """)
