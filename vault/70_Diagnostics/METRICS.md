@@ -40,3 +40,12 @@ Format: [timestamp] | [event_type] | [details]
 2026-05-13T22:25:10 | node_synced | id:20260513212200
 2026-05-13T22:25:13 | node_synced | id:20260513212200
 2026-05-13T22:27:44 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
+2026-05-13T22:30:55 | node_synced | id:20260513212200
+2026-05-13T22:31:45 | graph_traverse | seeds:0 returned:1
+2026-05-13T22:31:47 | graph_traverse | seeds:0 returned:1
+2026-05-13T22:32:44 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
+2026-05-13T22:37:44 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
+2026-05-13T22:42:44 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
+2026-05-13T22:47:44 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
+2026-05-13T22:49:14 | scheduled_job | module:tiered-memory tool:run_tier_promotion_demotion status:error error:[Errno 61] Connection refused
+2026-05-13T22:52:44 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
