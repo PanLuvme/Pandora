@@ -72,11 +72,15 @@ class DebouncedVaultWatcher(FileSystemEventHandler):
             print(f"Inbox: {path}")
         elif "/10_Atomic/" in path or "\\10_Atomic\\" in path:
             print(f"Syncing: {path}")
+            venv_python = os.path.expanduser(
+                "~/Pandora/brain/venv/bin/python"
+            )
             subprocess.Popen(
-                [sys.executable, "sync_vault.py",
-                 "--file", path],
+                [venv_python, "sync_vault.py", "--file", path],
                 cwd=os.path.expanduser("~/Pandora/brain")
             )
+            # Trigger immediate git push
+            threading.Timer(5.0, auto_git_push).start()
 
 
 def run_module_job(module_id: str, tool: str,
@@ -116,6 +120,39 @@ def run_module_job(module_id: str, tool: str,
         )
 
 
+def auto_git_push():
+    """Auto-commit and push vault changes to GitHub."""
+    import subprocess
+    try:
+        vault_path = os.path.expanduser("~/Pandora")
+        result = subprocess.run(
+            ["git", "status", "--porcelain"],
+            cwd=vault_path,
+            capture_output=True, text=True
+        )
+        if result.stdout.strip():
+            subprocess.run(
+                ["git", "add", "vault/"],
+                cwd=vault_path
+            )
+            from datetime import datetime
+            msg = f"Pandora auto-sync {datetime.now().strftime('%Y-%m-%d %H:%M')}"
+            subprocess.run(
+                ["git", "commit", "-m", msg],
+                cwd=vault_path
+            )
+            subprocess.run(
+                ["git", "push"],
+                cwd=vault_path
+            )
+            log_metrics("auto_git_push | vault synced to GitHub")
+            print("Auto-pushed to GitHub")
+        else:
+            print("No vault changes to push")
+    except Exception as e:
+        print(f"Auto-push error: {e}")
+
+
 def setup_schedule():
     schedule.every().hour.do(
         run_module_job, "tiered-memory",
@@ -150,6 +187,7 @@ def setup_schedule():
     schedule.every(7).days.do(
         run_module_job, "causal-discovery", "discover"
     )
+    schedule.every(10).minutes.do(auto_git_push)
     schedule.every(14).days.do(
         run_module_job, "self-state", "generate"
     )

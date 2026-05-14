@@ -93,6 +93,18 @@ def brain_tool(params: dict) -> dict:
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         with open(filepath, "w") as f:
             f.write(note_content)
+        # Auto-sync to Neo4j after write
+        try:
+            import subprocess
+            venv_python = os.path.expanduser(
+                "~/Pandora/brain/venv/bin/python"
+            )
+            subprocess.Popen(
+                [venv_python, "sync_vault.py", "--file", filepath],
+                cwd=os.path.expanduser("~/Pandora/brain")
+            )
+        except Exception as e:
+            print(f"Auto-sync error: {e}", file=sys.stderr)
         return {"status": "written", "path": filepath, "id": note_id}
     return {"error": "action must be list, load, reload, or run"}
 
