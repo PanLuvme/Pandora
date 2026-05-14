@@ -66,3 +66,8 @@ Format: [timestamp] | [event_type] | [details]
 2026-05-13T23:20:03 | node_synced | id:20260514000001
 2026-05-13T23:20:03 | node_synced | id:20260513212200
 2026-05-13T23:22:44 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
+2026-05-13T23:26:09 | node_synced | id:20260514000001
+2026-05-13T23:26:09 | node_synced | id:20260513212200
+2026-05-13T23:26:32 | temporal_decay | updated:2 stale:0
+2026-05-13T23:26:41 | pheromone_evaporation | daily
+2026-05-13T23:27:44 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
