@@ -1,0 +1,4 @@
+#!/bin/bash
+cd ~/Pandora/brain
+source venv/bin/activate
+python sync_vault.py

@@ -1,0 +1,9 @@
+brain/venv/
+brain/__pycache__/
+brain/**/__pycache__/
+**/*.pyc
+brain/brain_state.db
+vault/.obsidian-hybrid-search.db
+vault/.obsidian-hybrid-search.db-journal
+.DS_Store
+*.log

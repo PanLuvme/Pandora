@@ -1,0 +1,195 @@
+{
+  "last_updated": "2026-01-01T00:00:00Z",
+  "modules": {
+    "tiered-memory": {
+      "enabled": true,
+      "layer": 2,
+      "name": "Tiered Memory",
+      "description": "HOT/WARM/COOL/COLD memory tiers with intelligent promotion and demotion",
+      "script": "modules/tiered_memory/__init__.py",
+      "schedule": "hourly",
+      "config": {},
+      "health": {"status": "healthy", "last_run": null, "error_count": 0, "metrics": {}}
+    },
+    "subconscious": {
+      "enabled": true,
+      "layer": 2,
+      "name": "Pandora Subconscious",
+      "description": "Purkinje-inspired continuous random graph traversal generating proactive insights",
+      "script": "modules/subconscious/__init__.py",
+      "schedule": "every_5_minutes",
+      "config": {"loops_per_burst": 100},
+      "health": {"status": "healthy", "last_run": null, "error_count": 0, "metrics": {}}
+    },
+    "semantic-dedup": {
+      "enabled": true,
+      "layer": 2,
+      "name": "Semantic Deduplication",
+      "description": "Strips redundant noise before vault insertion",
+      "script": "modules/semantic_dedup/__init__.py",
+      "schedule": "on_capture",
+      "config": {"threshold_dup": 0.92, "threshold_sim": 0.80},
+      "health": {"status": "healthy", "last_run": null, "error_count": 0, "metrics": {}}
+    },
+    "entity-resolution": {
+      "enabled": true,
+      "layer": 2,
+      "name": "Entity Resolution",
+      "description": "Cross-source entity unification into single graph nodes",
+      "script": "modules/entity_resolution/__init__.py",
+      "schedule": "daily_03:00",
+      "config": {},
+      "health": {"status": "healthy", "last_run": null, "error_count": 0, "metrics": {}}
+    },
+    "neo4j-traversal": {
+      "enabled": true,
+      "layer": 2,
+      "name": "Neo4j Traversal",
+      "description": "Multi-hop graph traversal with APOC path expansion",
+      "script": "modules/neo4j_traversal/__init__.py",
+      "schedule": "on_query",
+      "config": {"max_hops": 2, "max_nodes": 15},
+      "health": {"status": "healthy", "last_run": null, "error_count": 0, "metrics": {}}
+    },
+    "spreading-activation": {
+      "enabled": false,
+      "layer": 3,
+      "name": "Spreading Activation",
+      "description": "Neural activation propagation with decay",
+      "script": "modules/spreading_activation/__init__.py",
+      "schedule": "sunday_03:00",
+      "config": {"decay": 0.7, "threshold": 0.15},
+      "health": {"status": "disabled", "last_run": null, "error_count": 0, "metrics": {}}
+    },
+    "temporal-decay": {
+      "enabled": false,
+      "layer": 3,
+      "name": "Temporal Decay",
+      "description": "Domain-specific knowledge half-life decay",
+      "script": "modules/temporal_decay/__init__.py",
+      "schedule": "daily_02:00",
+      "config": {},
+      "health": {"status": "disabled", "last_run": null, "error_count": 0, "metrics": {}}
+    },
+    "stigmergic-memory": {
+      "enabled": false,
+      "layer": 3,
+      "name": "Stigmergic Memory",
+      "description": "Ant colony pheromone path reinforcement",
+      "script": "modules/stigmergic_memory/__init__.py",
+      "schedule": "daily_02:30",
+      "config": {"evaporation_rate": 0.05, "deposit": 1.0},
+      "health": {"status": "disabled", "last_run": null, "error_count": 0, "metrics": {}}
+    },
+    "surprise-weighting": {
+      "enabled": false,
+      "layer": 3,
+      "name": "Surprise Weighting",
+      "description": "Information-theoretic initial node weight",
+      "script": "modules/surprise_weighting/__init__.py",
+      "schedule": "on_capture",
+      "config": {},
+      "health": {"status": "disabled", "last_run": null, "error_count": 0, "metrics": {}}
+    },
+    "mdl-pruning": {
+      "enabled": false,
+      "layer": 3,
+      "name": "MDL Pruning",
+      "description": "Minimum description length redundancy detection",
+      "script": "modules/mdl_pruning/__init__.py",
+      "schedule": "monthly",
+      "config": {"threshold": 0.92},
+      "health": {"status": "disabled", "last_run": null, "error_count": 0, "metrics": {}}
+    },
+    "active-learning": {
+      "enabled": false,
+      "layer": 3,
+      "name": "Active Learning",
+      "description": "Epistemic value ranking for open questions",
+      "script": "modules/active_learning/__init__.py",
+      "schedule": "sunday_04:00",
+      "config": {"top_n": 3},
+      "health": {"status": "disabled", "last_run": null, "error_count": 0, "metrics": {}}
+    },
+    "conceptual-blending": {
+      "enabled": false,
+      "layer": 4,
+      "name": "Conceptual Blending",
+      "description": "Fauconnier-Turner cross-domain blending",
+      "script": "modules/conceptual_blending/__init__.py",
+      "schedule": "monthly",
+      "config": {"min_node_weight": 2.0},
+      "health": {"status": "disabled", "last_run": null, "error_count": 0, "metrics": {}}
+    },
+    "tda-gap-detection": {
+      "enabled": false,
+      "layer": 4,
+      "name": "TDA Gap Detection",
+      "description": "Persistent homology structural hole detection",
+      "script": "modules/tda_gap_detection/__init__.py",
+      "schedule": "monthly",
+      "config": {"max_nodes": 500},
+      "health": {"status": "disabled", "last_run": null, "error_count": 0, "metrics": {}}
+    },
+    "schema-abstraction": {
+      "enabled": false,
+      "layer": 4,
+      "name": "Schema Abstraction",
+      "description": "Rumelhart schema detection and inheritance",
+      "script": "modules/schema_abstraction/__init__.py",
+      "schedule": "sunday_04:30",
+      "config": {},
+      "health": {"status": "disabled", "last_run": null, "error_count": 0, "metrics": {}}
+    },
+    "causal-discovery": {
+      "enabled": false,
+      "layer": 3,
+      "name": "Causal Discovery",
+      "description": "NOTEARS algorithm for causal inference",
+      "script": "modules/causal_discovery/__init__.py",
+      "schedule": "weekly",
+      "config": {"min_observations": 20},
+      "health": {"status": "disabled", "last_run": null, "error_count": 0, "metrics": {}}
+    },
+    "self-state": {
+      "enabled": true,
+      "layer": 2,
+      "name": "Self State Generator",
+      "description": "Reads brain state and identifies gaps",
+      "script": "modules/self_state/__init__.py",
+      "schedule": "biweekly",
+      "config": {},
+      "health": {"status": "healthy", "last_run": null, "error_count": 0, "metrics": {}}
+    },
+    "research-engine": {
+      "enabled": true,
+      "layer": 2,
+      "name": "Research Engine",
+      "description": "Searches arxiv and web for improvements",
+      "script": "modules/research_engine/__init__.py",
+      "schedule": "biweekly",
+      "config": {"max_per_query": 5, "max_queries": 10},
+      "health": {"status": "healthy", "last_run": null, "error_count": 0, "metrics": {}}
+    },
+    "self-improvement": {
+      "enabled": true,
+      "layer": 2,
+      "name": "Self Improvement Evaluator",
+      "description": "Evaluates research and proposes new modules",
+      "script": "modules/self_improvement/__init__.py",
+      "schedule": "biweekly",
+      "config": {},
+      "health": {"status": "healthy", "last_run": null, "error_count": 0, "metrics": {}}
+    },
+    "connectors": {
+      "enabled": false,
+      "layer": 2,
+      "name": "Communication Connectors",
+      "description": "Telegram and Gmail ingestion into vault",
+      "script": "modules/connectors/__init__.py",
+      "schedule": "every_15_minutes",
+      "config": {},
+      "health": {"status": "disabled", "last_run": null, "error_count": 0, "metrics": {}}
+    }
+  }
+}
