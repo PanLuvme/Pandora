@@ -85,7 +85,7 @@
       }
     },
     "spreading-activation": {
-      "enabled": false,
+      "enabled": true,
       "layer": 3,
       "name": "Spreading Activation",
       "description": "Neural activation propagation with decay",
@@ -136,7 +136,7 @@
       }
     },
     "surprise-weighting": {
-      "enabled": false,
+      "enabled": true,
       "layer": 3,
       "name": "Surprise Weighting",
       "description": "Information-theoretic initial node weight",
@@ -168,7 +168,7 @@
       }
     },
     "active-learning": {
-      "enabled": false,
+      "enabled": true,
       "layer": 3,
       "name": "Active Learning",
       "description": "Epistemic value ranking for open questions",
