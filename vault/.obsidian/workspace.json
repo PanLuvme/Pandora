@@ -11,10 +11,10 @@
             "id": "e5ce9ed70febc1e2",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "graph",
               "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -214,8 +214,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "fdf4f50b34c05526",
+  "active": "83af88a6958bb2f8",
   "lastOpenFiles": [
+    "10_Atomic/20260514143000.md",
+    "10_Atomic/20260514000001.md",
     "10_Atomic/20260514999999.md",
     "70_Diagnostics/modules/semantic-dedup-health.json",
     "10_Atomic/20260514000004.md",
@@ -225,7 +227,6 @@
     "10_Atomic/20260514000002.md",
     "70_Diagnostics/modules/stigmergic-memory-health.json",
     "70_Diagnostics/modules/temporal-decay-health.json",
-    "10_Atomic/20260514000001.md",
     "60_SelfImprovement/SELF_STATE.md",
     "10_Atomic/pandora-overview.md",
     "70_Diagnostics/modules/tiered-memory-health.json",

@@ -152,3 +152,16 @@ Format: [timestamp] | [event_type] | [details]
 2026-05-14T04:59:00 | node_synced | id:20260514000003
 2026-05-14T04:59:00 | node_synced | id:20260513212200
 2026-05-14T04:59:00 | node_synced | id:20260514999999
+2026-05-14T04:59:01 | node_synced | id:20260514000004
+2026-05-14T04:59:01 | node_synced | id:20260514000001
+2026-05-14T04:59:01 | node_synced | id:20260514000002
+2026-05-14T04:59:01 | node_synced | id:20260514000003
+2026-05-14T04:59:01 | node_synced | id:20260513212200
+2026-05-14T04:59:01 | node_synced | id:20260514999999
+2026-05-14T05:00:44 | surprise_weighting | score:1.0 new_domain
+2026-05-14T05:00:49 | semantic_dedup | score:0.000 match:none
+2026-05-14T05:02:11 | node_synced | id:20260514000004
+2026-05-14T05:02:11 | node_synced | id:20260514000001
+2026-05-14T05:02:11 | node_synced | id:20260514000002
+2026-05-14T05:02:11 | node_synced | id:20260514000003
+2026-05-14T05:02:11 | node_synced | id:20260513212200
