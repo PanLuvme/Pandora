@@ -312,6 +312,21 @@
         "error_count": 0,
         "metrics": {}
       }
+    },
+    "self-export": {
+      "enabled": true,
+      "layer": 2,
+      "name": "Self Export",
+      "description": "Exports complete brain state for any LLM to read",
+      "script": "modules/self_export/__init__.py",
+      "schedule": "manual",
+      "config": {},
+      "health": {
+        "status": "healthy",
+        "last_run": null,
+        "error_count": 0,
+        "metrics": {}
+      }
     }
   }
 }
