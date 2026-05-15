@@ -96,7 +96,7 @@
         "threshold": 0.15
       },
       "health": {
-        "status": "disabled",
+        "status": "healthy",
         "last_run": null,
         "error_count": 0,
         "metrics": {}
@@ -111,7 +111,7 @@
       "schedule": "daily_02:00",
       "config": {},
       "health": {
-        "status": "disabled",
+        "status": "healthy",
         "last_run": null,
         "error_count": 0,
         "metrics": {}
@@ -129,7 +129,7 @@
         "deposit": 1.0
       },
       "health": {
-        "status": "disabled",
+        "status": "healthy",
         "last_run": null,
         "error_count": 0,
         "metrics": {}
@@ -144,7 +144,7 @@
       "schedule": "on_capture",
       "config": {},
       "health": {
-        "status": "disabled",
+        "status": "healthy",
         "last_run": null,
         "error_count": 0,
         "metrics": {}
@@ -161,7 +161,7 @@
         "threshold": 0.92
       },
       "health": {
-        "status": "disabled",
+        "status": "healthy",
         "last_run": null,
         "error_count": 0,
         "metrics": {}
@@ -178,14 +178,14 @@
         "top_n": 3
       },
       "health": {
-        "status": "disabled",
+        "status": "healthy",
         "last_run": null,
         "error_count": 0,
         "metrics": {}
       }
     },
     "conceptual-blending": {
-      "enabled": false,
+      "enabled": true,
       "layer": 4,
       "name": "Conceptual Blending",
       "description": "Fauconnier-Turner cross-domain blending",
@@ -195,7 +195,7 @@
         "min_node_weight": 2.0
       },
       "health": {
-        "status": "disabled",
+        "status": "healthy",
         "last_run": null,
         "error_count": 0,
         "metrics": {}
@@ -227,7 +227,7 @@
       "schedule": "sunday_04:30",
       "config": {},
       "health": {
-        "status": "disabled",
+        "status": "healthy",
         "last_run": null,
         "error_count": 0,
         "metrics": {}
@@ -244,7 +244,7 @@
         "min_observations": 20
       },
       "health": {
-        "status": "disabled",
+        "status": "healthy",
         "last_run": null,
         "error_count": 0,
         "metrics": {}
