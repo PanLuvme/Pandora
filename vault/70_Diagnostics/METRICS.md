@@ -471,3 +471,15 @@ Format: [timestamp] | [event_type] | [details]
 2026-05-14T19:59:10 | traverse | returned:7
 2026-05-14T20:00:05 | node_synced | id:20260514999999
 2026-05-14T20:00:08 | node_synced | id:20260514999999
+2026-05-14T20:00:13 | node_synced | id:20260514999999
+2026-05-14T20:00:13 | node_synced | id:20260514000004
+2026-05-14T20:00:14 | node_synced | id:20260514000001
+2026-05-14T20:00:14 | node_synced | id:20260514000002
+2026-05-14T20:00:14 | node_synced | id:20260514000003
+2026-05-14T20:00:14 | node_synced | id:20260513212200
+2026-05-14T20:00:18 | stigmergic_retrieve | returned:7
+2026-05-14T20:00:55 | active_learning | questions:1 top:1
+2026-05-14T20:01:17 | surprise_weighting | score:1.0 new_domain
+2026-05-14T20:01:35 | semantic_dedup | score:0.000 match:none
+2026-05-14T20:01:44 | auto_git_push | vault synced to GitHub
+2026-05-14T20:03:02 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused

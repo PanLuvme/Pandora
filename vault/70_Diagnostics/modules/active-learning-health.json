@@ -1,0 +1,9 @@
+{
+  "status": "healthy",
+  "error_count": 0,
+  "metrics": {
+    "questions_ranked": 1,
+    "top_returned": 1
+  },
+  "last_run": "2026-05-14T20:00:55.611360"
+}
