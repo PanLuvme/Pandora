@@ -1,5 +1,5 @@
 # Pandora Self Export
-Generated: 2026-05-14T19:56:45.232402
+Generated: 2026-05-17T01:29:24.307244
 
 ## Identity
 {
@@ -14,10 +14,16 @@ Generated: 2026-05-14T19:56:45.232402
 - Nodes: 7
 - Orphans: 2
 - Avg connections: 2.0
-- Memory tiers: {'hot': 2, 'warm': 5}
+- Memory tiers: {'hot': 2, 'warm': 4, 'archive': 1}
 - Edge types: [{'type': 'RELATED', 'count': 6}, {'type': 'IMPLEMENTS', 'count': 1}]
 
 ## All Nodes
+
+### 20260514999999 — ['Write Test']
+Tier: archive | Weight: 1.0 | Captured: 2026-05-14
+Tags: ['Meta/Housekeeping']
+Edges: {}
+Content: Scratch node created during initial vault write test. Archived — no semantic value.
 
 ### 20260514000004 — ['Obsidian']
 Tier: warm | Weight: 1.0 | Captured: 2026-05-14
@@ -89,7 +95,7 @@ Pandora is a living second brain built on a mycelium architecture using Neo4j fo
 ## Detail
 The brain grows exponentially through stigmergic memory, spreading activation, and a
 
-## Enabled Modules (17)
+## Enabled Modules (18)
 - **Tiered Memory** (tiered-memory) | hourly | healthy
   Pandora's memory works like the human brain — not everything is equally accessible. Frequently used knowledge stays HOT and surfaces instantly. Knowle
 - **Pandora Subconscious** (subconscious) | every_5_minutes | healthy
@@ -100,21 +106,23 @@ The brain grows exponentially through stigmergic memory, spreading activation, a
   When you capture information from multiple sources — a PDF, a Telegram message, a web article — the same concept can appear across all three as separa
 - **Neo4j Traversal** (neo4j-traversal) | on_query | healthy
   
-- **Spreading Activation** (spreading-activation) | sunday_03:00 | disabled
+- **Spreading Activation** (spreading-activation) | sunday_03:00 | healthy
   Based on cognitive science models of how human memory works. When you think of one concept, related concepts become partially activated in your mind —
-- **Temporal Decay** (temporal-decay) | daily_02:00 | disabled
+- **Temporal Decay** (temporal-decay) | daily_02:00 | healthy
   Knowledge expires at different rates. A note about a Python library from 2022 is probably outdated. A note about Euclidean geometry from 2022 is still
-- **Stigmergic Memory** (stigmergic-memory) | daily_02:30 | disabled
+- **Stigmergic Memory** (stigmergic-memory) | daily_02:30 | healthy
   Inspired by ant colonies. When ants find food they leave pheromone trails. Other ants follow the strongest trails. Unused trails evaporate. The colony
-- **Surprise Weighting** (surprise-weighting) | on_capture | disabled
+- **Surprise Weighting** (surprise-weighting) | on_capture | healthy
   When you capture something new, not all information is equally valuable. Information that genuinely surprises the brain — that says something your exi
-- **MDL Pruning** (mdl-pruning) | monthly | disabled
+- **MDL Pruning** (mdl-pruning) | monthly | healthy
   Minimum Description Length pruning identifies nodes that are informationally redundant — nodes that say nothing the graph does not already know from t
-- **Active Learning** (active-learning) | sunday_04:00 | disabled
+- **Active Learning** (active-learning) | sunday_04:00 | healthy
   Not all questions are equally worth answering. Some questions, if answered, would significantly improve the brain's connectivity and retrieval quality
-- **Schema Abstraction** (schema-abstraction) | sunday_04:30 | disabled
+- **Conceptual Blending** (conceptual-blending) | monthly | healthy
+  
+- **Schema Abstraction** (schema-abstraction) | sunday_04:30 | healthy
   Based on Rumelhart's schema theory. A schema is a reusable knowledge structure — an abstract pattern that recurs across different domains. When you no
-- **Causal Discovery** (causal-discovery) | weekly | disabled
+- **Causal Discovery** (causal-discovery) | weekly | healthy
   Finds causal structure in your knowledge graph. When two concepts are consistently retrieved together and one is more fundamental than the other, caus
 - **Self State Generator** (self-state) | biweekly | healthy
   Pandora reads itself. This module scans the entire brain — every module, every node, every edge — and produces a precise description of its current st
@@ -126,7 +134,7 @@ The brain grows exponentially through stigmergic memory, spreading activation, a
   One tool call returns everything about Pandora: every module, every node, graph stats, schedule, gaps, and full diagnostics. Written to EXPORT.md in t
 
 ## Disabled Modules
-['conceptual-blending', 'tda-gap-detection', 'connectors']
+['tda-gap-detection', 'connectors']
 
 ## Schedule
 {
