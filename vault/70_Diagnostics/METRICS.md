@@ -2225,3 +2225,11 @@ Format: [timestamp] | [event_type] | [details]
 2026-05-17T10:56:14 | node_synced | id:20260513212200
 2026-05-17T10:56:16 | auto_git_push | vault synced to GitHub
 2026-05-17T11:13:20 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
+2026-05-17T11:13:21 | node_synced | id:20260514999999
+2026-05-17T11:13:21 | node_synced | id:20260514000004
+2026-05-17T11:13:21 | node_synced | id:20260514000001
+2026-05-17T11:13:21 | node_synced | id:20260514000002
+2026-05-17T11:13:21 | node_synced | id:20260514000003
+2026-05-17T11:13:21 | node_synced | id:20260513212200
+2026-05-17T11:13:22 | auto_git_push | vault synced to GitHub
+2026-05-17T11:28:59 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
