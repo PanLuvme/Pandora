@@ -4486,3 +4486,13 @@ Format: [timestamp] | [event_type] | [details]
 2026-05-20T04:48:01 | auto_git_push | vault synced to GitHub
 2026-05-20T04:48:01 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
 2026-05-20T04:53:01 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
+2026-05-20T04:58:01 | node_synced | id:20260514999999
+2026-05-20T04:58:02 | node_synced | id:20260514000004
+2026-05-20T04:58:02 | node_synced | id:20260514000001
+2026-05-20T04:58:02 | node_synced | id:20260514000002
+2026-05-20T04:58:02 | node_synced | id:20260514000003
+2026-05-20T04:58:02 | node_synced | id:20260513212200
+2026-05-20T04:58:03 | auto_git_push | vault synced to GitHub
+2026-05-20T04:58:03 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
+2026-05-20T05:03:03 | scheduled_job | module:subconscious tool:run_burst_adaptive status:error error:[Errno 61] Connection refused
+2026-05-20T05:03:33 | scheduled_job | module:tiered-memory tool:run_tier_promotion_demotion status:error error:[Errno 61] Connection refused
